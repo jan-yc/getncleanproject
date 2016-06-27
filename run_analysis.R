@@ -33,7 +33,9 @@ trimdata <- tbl_df(
 # 5.	From the data set in step 4, creates a second, independent tidy data set 
 # with the average of each variable for each activity and each subject.
 trimdata <- group_by(trimdata, subject, activity)
-newdata <- summarise_each(trimdata, funs(mean)) 
+meandata <- summarise_each(trimdata, funs(mean)) 
 
 # 6.	Please upload the tidy data set created in step 5 of the instructions. 
-write.table(newdata, file = "summary.txt", row.names = FALSE)
+write.table(meandata, file = "summary.txt", row.names = FALSE)
+
+# Use View(meandata) to view the tidy data within R.
